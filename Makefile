@@ -1,8 +1,9 @@
 # Proxima Allocator
-CC      = gcc
-CFLAGS  = -Wall -Wextra -std=c11 -O2
-TARGET  = proxima
-OBJS    = main.o pool.o
+CC       = gcc
+CFLAGS   = -Wall -Wextra -std=c11 -O2 -Iinclude
+TARGET   = proxima
+SRCS     = src/main.c src/pool.c
+OBJS     = src/main.o src/pool.o
 
 .PHONY: all clean run
 
@@ -11,11 +12,11 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS)
 
-main.o: main.c pool.h
-	$(CC) $(CFLAGS) -c main.c -o main.o
+src/main.o: src/main.c include/pool.h
+	$(CC) $(CFLAGS) -c src/main.c -o src/main.o
 
-pool.o: pool.c pool.h
-	$(CC) $(CFLAGS) -c pool.c -o pool.o
+src/pool.o: src/pool.c include/pool.h
+	$(CC) $(CFLAGS) -c src/pool.c -o src/pool.o
 
 run: $(TARGET)
 	./$(TARGET)

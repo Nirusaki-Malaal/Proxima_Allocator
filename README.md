@@ -14,10 +14,13 @@ A simple pool allocator in C that gets its memory from `mmap` only.
 
 ```
 .
-├── main.c    # Menu front end
-├── pool.c    # Allocator implementation
-├── pool.h    # Public interface
-└── Makefile
+├── include/
+│   └── pool.h    # Public interface
+├── src/
+│   ├── main.c    # Menu front end
+│   └── pool.c    # Allocator implementation
+├── Makefile
+└── README.md
 ```
 
 ## Build

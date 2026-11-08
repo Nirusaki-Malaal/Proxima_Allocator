@@ -1,5 +1,4 @@
 # Build artifacts
 proxima
-main.o
-pool.o
+src/*.o
 main
