@@ -1,4 +1,4 @@
 # Build artifacts
 proxima
-src/*.o
 main
+*.o
